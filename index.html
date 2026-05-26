@@ -738,34 +738,8 @@ const ACCT_OPTIONS=[
   '해외조사비-숙박','해외조사비-항공료','해외조사비-식대 여비','해외조사비-시장조사비',
 ];
 const ACCT_OPT_HTML='<option value="">계정 선택</option>'+ACCT_OPTIONS.map(a=>`<option>${a}</option>`).join('');
-  {cat:'회의비',nm:'회의비-임원'},{cat:'회의비',nm:'회의비-부서'},{cat:'회의비',nm:'회의비-기타'},
-  {cat:'교육훈련비',nm:'교육훈련비-사외'},{cat:'교육훈련비',nm:'교육훈련비-워크샵 (일반)'},
-  {cat:'도서인쇄비',nm:'도서인쇄비-도서구입'},{cat:'도서인쇄비',nm:'도서인쇄비-외주인쇄비'},{cat:'도서인쇄비',nm:'도서인쇄비-정기간행물'},{cat:'도서인쇄비',nm:'도서인쇄비-신문구독료'},
-  {cat:'소모품비',nm:'소모품비-사무용품비'},
-  {cat:'통신비',nm:'통신비-휴대폰'},{cat:'통신비',nm:'통신비-우편료'},{cat:'통신비',nm:'통신비-인터넷망'},{cat:'통신비',nm:'통신비-기타'},
-  {cat:'보험료',nm:'보험료-기타'},
-  {cat:'차량유지비',nm:'차량유지비-수선비'},{cat:'차량유지비',nm:'차량유지비-주차/통행료'},
-  {cat:'지급수수료',nm:'지급수수료-외주용역수수료'},{cat:'지급수수료',nm:'지급수수료-배송'},{cat:'지급수수료',nm:'지급수수료-증명수수료'},{cat:'지급수수료',nm:'지급수수료-SMS'},{cat:'지급수수료',nm:'지급수수료-기타'},
-  {cat:'세금과공과',nm:'세금과공과-인지세'},
-  {cat:'대외업무활동비',nm:'대외업무활동비-법인카드사용분'},{cat:'대외업무활동비',nm:'대외업무활동비-대외경조사'},{cat:'대외업무활동비',nm:'대외업무활동비-문화'},
-  {cat:'조사연구비',nm:'조사연구비-리서치'},
-  {cat:'수입통관료',nm:'수입통관료-운송비'},
-  {cat:'여비교통비',nm:'여비교통비-시내교통비'},{cat:'여비교통비',nm:'여비교통비-국내출장비'},{cat:'여비교통비',nm:'여비교통비-유류대'},
-  {cat:'해외조사비',nm:'해외조사비-숙박'},{cat:'해외조사비',nm:'해외조사비-항공료'},{cat:'해외조사비',nm:'해외조사비-식대 여비'},{cat:'해외조사비',nm:'해외조사비-시장조사비'},
-];
-function renderAcct(data){
-  const tb=document.getElementById('acctBody');
-  let lastCat='';tb.innerHTML='';
-  data.forEach(r=>{
-    const showCat=r.cat!==lastCat;lastCat=r.cat;
-    tb.innerHTML+=`<tr><td style="color:var(--text2);font-size:12px;padding-left:${showCat?'12px':'24px'}px">${showCat?r.cat:''}</td><td style="padding-left:${showCat?'12px':'24px'}px">${r.nm}</td></tr>`;
-  });
-}
-renderAcct(ACCT_DATA);
-function filterAcct(){
-  const q=document.getElementById('acctSearch').value.toLowerCase().trim();
-  renderAcct(q?ACCT_DATA.filter(r=>r.nm.toLowerCase().includes(q)||r.cat.toLowerCase().includes(q)):ACCT_DATA);
-}
+function renderAcct(){}
+function filterAcct(){}
 
 // ===== AI 챗봇 =====
 function sq(q){document.getElementById('chatInput').value=q;sm();}
