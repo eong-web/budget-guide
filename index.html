@@ -212,7 +212,7 @@ table.main-tbl tbody tr:hover td{background:var(--surface2)}
         <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>유의사항
       </button>
       <button class="nav-item" onclick="go('faq',this)">
-        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>FAQ + AI
+        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>자주 묻는 질문
       </button>
       <button class="nav-item" onclick="go('cctr',this)">
         <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>코스트센터
@@ -231,7 +231,7 @@ table.main-tbl tbody tr:hover td{background:var(--surface2)}
         <div class="home-card" onclick="go('apply',document.querySelectorAll('.nav-item')[1])"><div class="home-card-icon">📋</div><h3>예산 조정 신청</h3><p>품의 → BizOne</p></div>
         <div class="home-card" onclick="go('check',document.querySelectorAll('.nav-item')[2])"><div class="home-card-icon">📊</div><h3>예산 현황 조회</h3><p>잔액 및 조정 내역 확인</p></div>
         <div class="home-card" onclick="go('notes',document.querySelectorAll('.nav-item')[3])"><div class="home-card-icon">⚠️</div><h3>유의사항</h3><p>예산 처리 시 주의사항</p></div>
-        <div class="home-card" onclick="go('faq',document.querySelectorAll('.nav-item')[4])"><div class="home-card-icon">🤖</div><h3>FAQ + AI 챗봇</h3><p>자주 묻는 질문 · AI 답변</p></div>
+        <div class="home-card" onclick="go('faq',document.querySelectorAll('.nav-item')[4])"><div class="home-card-icon">💬</div><h3>자주 묻는 질문</h3><p>FAQ 모음</p></div>
         <div class="home-card" onclick="go('cctr',document.querySelectorAll('.nav-item')[5])"><div class="home-card-icon">🏢</div><h3>코스트센터</h3><p>조직별 CCTR 코드</p></div>
       </div>
       <div class="contact-card">
@@ -431,31 +431,8 @@ table.main-tbl tbody tr:hover td{background:var(--surface2)}
 
     <!-- FAQ + AI -->
     <div id="faq" class="page">
-      <h1>FAQ + AI 답변</h1>
-      <p class="page-sub">궁금한 점을 AI에게 바로 질문하거나, 아래 자주 묻는 질문을 확인하세요. — IP)사업기획1팀</p>
-
-      <!-- AI 챗봇 먼저 -->
-      <div class="chat-wrap" style="margin-bottom:2rem">
-        <div class="chat-header"><div class="chat-dot"></div>AI 예산 안내 도우미 — IP)사업기획1팀</div>
-        <div class="chat-msgs" id="chatMsgs">
-          <div class="msg bot">안녕하세요! 부서예산 관련 궁금한 점을 질문해 주세요. 자주 묻는 질문은 아래에서도 확인하실 수 있습니다.</div>
-        </div>
-        <div class="chips">
-          <span class="chip" onclick="sq('예산 이월은 어떻게 하나요?')">예산 이월</span>
-          <span class="chip" onclick="sq('전용과 기간전용 차이가 뭐예요?')">전용 vs 기간전용</span>
-          <span class="chip" onclick="sq('BizOne 경로가 어디예요?')">BizOne 경로</span>
-          <span class="chip" onclick="sq('말일에 신청해도 되나요?')">말일 신청</span>
-          <span class="chip" onclick="sq('IT자산 계정 처리 알려줘')">IT자산 계정</span>
-          <span class="chip" onclick="sq('회의비 어떤 계정인가요?')">회의비</span>
-        </div>
-        <div class="chat-input-row">
-          <input type="text" class="chat-input" id="chatInput" placeholder="질문을 입력하세요..." onkeydown="if(event.key==='Enter')sm()"/>
-          <button class="chat-btn" onclick="sm()">전송</button>
-        </div>
-      </div>
-
-      <!-- FAQ 아래로 -->
-      <h2>자주 묻는 질문</h2>
+      <h1>자주 묻는 질문</h1>
+      <p class="page-sub">자주 오는 문의를 정리했습니다. — IP)사업기획1팀</p>
 
       <div class="faq-item"><button class="faq-q" onclick="tf(this)">당월에 정산 못한 건은 무조건 품의를 써야 하나요? <span class="faq-chevron">▼</span></button>
         <div class="faq-a">당월 사용분은 반드시 당월 내 정산이 원칙입니다.</div></div>
@@ -473,10 +450,7 @@ table.main-tbl tbody tr:hover td{background:var(--surface2)}
         <div class="faq-a">업무용 100만원 이상일 경우 자산 처리, 100만원 미만일 경우 비용 처리입니다.</div></div>
 
       <div class="faq-item"><button class="faq-q" onclick="tf(this)">기간 전용과 전용의 차이가 뭔가요? <span class="faq-chevron">▼</span></button>
-        <div class="faq-a">
-          기간 전용은 계정은 그대로 유지하면서 기간(월)만 변경하고 싶을 때 사용합니다.<br>
-          전용은 계정에 상관없이 전체 계정 간 이동이 가능합니다.
-        </div></div>
+        <div class="faq-a">기간 전용은 계정은 그대로 유지하면서 기간(월)만 변경하고 싶을 때 사용합니다.<br>전용은 계정에 상관없이 전체 계정 간 이동이 가능합니다.</div></div>
 
       <div class="faq-item"><button class="faq-q" onclick="tf(this)">대리운전은 어느 계정으로 처리하나요? <span class="faq-chevron">▼</span></button>
         <div class="faq-a">지급수수료 - 외주용역수수료로 처리합니다. 조직장에 한해 처리 가능합니다.</div></div>
@@ -493,6 +467,14 @@ table.main-tbl tbody tr:hover td{background:var(--surface2)}
           품의 당시 환율이 현재 환율보다 높은 경우: 품의 당시 환율 기준으로 예산을 추가하되, 실제 일비는 현재 환율 기준으로 신청합니다.<br><br>
           품의 당시 환율이 현재 환율보다 낮은 경우: 출장 보고서 내에 현재 환율 기준의 추가 금액과 사유를 기재합니다. 이미 출장 보고서가 결재된 경우에는 누락 품의 내에 예산 추가 건을 기입하면 됩니다.
         </div></div>
+
+      <div class="contact-card" style="margin-top:2rem">
+        <div class="contact-avatar">김</div>
+        <div class="contact-info">
+          <strong>추가 문의 — IP)사업기획1팀 김예원님</strong>
+          <span>FAQ에 없는 내용은 직접 문의해 주세요.</span>
+        </div>
+      </div>
     </div>
 
     <!-- 코스트센터 -->
