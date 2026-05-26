@@ -228,9 +228,9 @@ table.main-tbl tbody tr:hover td{background:var(--surface2)}
       <p class="page-note">※ Non-Scripted BU, 디지털신사업담당, 콘텐츠마케팅담당 등</p>
       <p class="page-sub">예산 조정 신청 · 조회 등 주요 절차 및 유의사항 정리 — IP)사업기획1팀</p>
       <div class="home-grid">
-        <div class="home-card" onclick="go('apply',document.querySelectorAll('.nav-item')[1])"><div class="home-card-icon">📋</div><h3>예산 조정 신청</h3><p>품의 → BizOne 2단계</p></div>
+        <div class="home-card" onclick="go('apply',document.querySelectorAll('.nav-item')[1])"><div class="home-card-icon">📋</div><h3>예산 조정 신청</h3><p>품의 → BizOne</p></div>
         <div class="home-card" onclick="go('check',document.querySelectorAll('.nav-item')[2])"><div class="home-card-icon">📊</div><h3>예산 현황 조회</h3><p>잔액 및 조정 내역 확인</p></div>
-        <div class="home-card" onclick="go('notes',document.querySelectorAll('.nav-item')[3])"><div class="home-card-icon">⚠️</div><h3>유의사항</h3><p>분기 마감 · 재무 처리</p></div>
+        <div class="home-card" onclick="go('notes',document.querySelectorAll('.nav-item')[3])"><div class="home-card-icon">⚠️</div><h3>유의사항</h3><p>예산 처리 시 주의사항</p></div>
         <div class="home-card" onclick="go('faq',document.querySelectorAll('.nav-item')[4])"><div class="home-card-icon">🤖</div><h3>FAQ + AI 챗봇</h3><p>자주 묻는 질문 · AI 답변</p></div>
         <div class="home-card" onclick="go('cctr',document.querySelectorAll('.nav-item')[5])"><div class="home-card-icon">🏢</div><h3>코스트센터</h3><p>조직별 CCTR 코드</p></div>
       </div>
@@ -243,7 +243,7 @@ table.main-tbl tbody tr:hover td{background:var(--surface2)}
     <!-- 예산 조정 신청 -->
     <div id="apply" class="page">
       <h1>예산 조정 신청</h1>
-      <p class="page-sub">사전 품의 진행 후 BizOne에서 예산조정신청을 완료하는 2단계 절차입니다. — IP)사업기획1팀</p>
+      <p class="page-sub">사전 품의 진행 후 BizOne에서 예산조정신청을 완료하는 2단계 절차입니다.</p>
       <div class="tab-row">
         <button class="tab-btn active" onclick="showTab('apply','a-guide',this)">단계별 안내</button>
         <button class="tab-btn" onclick="showTab('apply','a-bizone',this)">BizOne 화면 체험</button>
@@ -260,9 +260,15 @@ table.main-tbl tbody tr:hover td{background:var(--surface2)}
                 <div class="flow-row">
                   <div class="flow-col"><span class="flow-label">조정</span><div class="flow-node">1차 상사<small>팀장/CP (부재 시 생략)</small></div></div>
                   <span class="flow-arr">›</span>
-                  <div class="flow-col"><span class="flow-label-empty">합의</span><div class="flow-node">IP사업기획담당<small>합의</small></div></div>
+                  <div class="flow-col"><span class="flow-label-empty">합의</span><div class="flow-node">IP사업기획1팀<small>합의</small></div></div>
                   <span class="flow-arr">›</span>
                   <div class="flow-col"><span class="flow-label">결재</span><div class="flow-node">2차 상사<small>담당/사업부장/EP</small></div></div>
+                </div>
+                <div style="margin-top:.75rem;font-size:12px;color:var(--text2);background:var(--warn-bg);border:1px solid var(--warn-border);border-radius:var(--radius-sm);padding:.65rem .9rem;line-height:1.7">
+                  <strong style="color:var(--warn-text)">⚠️ 아래 경우는 IP사업기획담당 합의 지정</strong><br>
+                  · 예산 추가 1천만원 이상<br>
+                  · 지급수수료 전용 건 (금액 무관)<br>
+                  · 예산 內 계정간 전용
                 </div>
               </div>
             </div></div>
@@ -528,11 +534,6 @@ function tf(btn){btn.nextElementSibling.classList.toggle('open');btn.classList.t
 
 // ===== 코스트센터 데이터 =====
 const D=[
-  {g:'IP·플랫폼사업총괄'},
-  {o:'IP·플랫폼사업총괄',c:'A0900',n:'IP플랫폼사업총괄',i:0},
-  {g:'사업지원담당'},
-  {o:'사업지원담당',c:'A0902',n:'IP플랫폼)사업지원담당',i:1},
-  {o:'사업지원팀',c:'A0903',n:'IP플랫폼)사업지원팀',i:2},
   {g:'IP사업본부'},
   {o:'IP사업본부',c:'A0731',n:'IP)IP사업본부',i:0},
   {o:'콘텐츠CA팀',c:'A0732',n:'IP)콘텐츠CA팀',i:2},
