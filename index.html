@@ -635,7 +635,7 @@ function bzRenderDetail(){
       <td class="req-cell bz-search-cell"><input class="bz-input-cell" value="${r.cost}" placeholder="코드" style="width:60px" oninput="bzDetailRows[${i}].cost=this.value"/><button class="bz-search-cell button" style="border:1px solid #90b4d8;background:#e8eef8;border-radius:2px;padding:2px 4px;font-size:10px;cursor:pointer">Q</button></td>
       <td><input class="bz-input-cell" value="${r.costNm}" placeholder="부서명" oninput="bzDetailRows[${i}].costNm=this.value"/></td>
       <td class="req-cell bz-search-cell"><input class="bz-input-cell" value="${r.acct}" placeholder="계정" style="width:60px" oninput="bzDetailRows[${i}].acct=this.value"/><button style="border:1px solid #90b4d8;background:#e8eef8;border-radius:2px;padding:2px 4px;font-size:10px;cursor:pointer">Q</button></td>
-      <td><select class="bz-select-cell" onchange="bzDetailRows[${i}].acctNm=this.value">${ACCT_OPT_HTML.replace(`>${r.acctNm}<`,` selected>${r.acctNm}<`)}</select></td>
+      <td><select class="bz-select-cell" onchange="bzDetailRows[${i}].acctNm=this.value">${ACCT_OPTIONS.map(a=>'<option value="'+a+'"'+(a===r.acctNm?' selected':'')+'>'+a+'</option>').join('')}</select></td>
       <td><select class="bz-select-cell" onchange="bzDetailRows[${i}].center=this.value"><option value="">선택</option><option>NS)예능제작1사업부</option><option>NS)예능제작2사업부</option><option>IP)사업기획담당</option><option>IP)콘텐츠마케팅담당</option><option>IP)디지털신사업담당</option></select></td>
       <td class="bz-num">0</td><td class="bz-num">0</td><td class="bz-num">0</td>
       <td><select class="bz-select-cell" style="width:50px" onchange="bzDetailRows[${i}].sign=this.value"><option value="+">(+)</option><option value="-">(-)</option></select></td>
