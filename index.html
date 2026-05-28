@@ -116,11 +116,22 @@ table.main-tbl thead th{background:var(--surface2);padding:8px 12px;text-align:l
 table.main-tbl tbody td{padding:7px 12px;border-bottom:1px solid var(--border);color:var(--text)}
 table.main-tbl tbody tr:last-child td{border-bottom:none}
 table.main-tbl tbody tr:hover td{background:var(--surface2)}
-.grp-hd td{font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.04em;background:var(--surface2);color:var(--text3);padding:10px 12px 6px}
+.grp-hd td{font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.04em;background:#e2dff5;color:#3d2a8a;padding:10px 12px 6px}
 .cctr-code{font-family:var(--mono);font-size:11px;background:var(--surface2);border:1px solid var(--border);padding:2px 6px;border-radius:4px;color:var(--accent-text)}
 .i1{padding-left:20px!important}.i2{padding-left:36px!important}.i3{padding-left:52px!important}
 .faq-search-box{display:flex;gap:12px;align-items:flex-start;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.1rem 1.25rem;margin-bottom:1rem}
 .faq-search-icon{font-size:28px;flex-shrink:0;line-height:1;margin-top:2px}
+.home-btn{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--accent-text);background:var(--accent-bg);border:1px solid var(--accent-text);border-radius:var(--radius-sm);padding:6px 14px;cursor:pointer;margin-bottom:1.25rem;font-family:inherit;font-weight:500;transition:all .15s}
+.home-btn:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+.faq-layout{display:flex;gap:1.5rem;align-items:flex-start}
+.faq-cat-nav{width:140px;flex-shrink:0;position:sticky;top:1rem}
+.faq-cat-nav-inner{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:.75rem}
+.faq-cat-nav-title{font-size:10px;font-weight:700;letter-spacing:.06em;color:var(--text3);text-transform:uppercase;margin-bottom:.5rem;padding:0 4px}
+.faq-cat-btn{display:block;width:100%;text-align:left;padding:5px 8px;border:none;background:none;font-size:12px;color:var(--text2);cursor:pointer;border-radius:var(--radius-sm);font-family:inherit;transition:all .15s}
+.faq-cat-btn:hover{background:var(--surface2);color:var(--text)}
+.faq-cat-btn.active{background:var(--accent-bg);color:var(--accent-text);font-weight:500}
+.faq-main{flex:1;min-width:0}
+@media(max-width:680px){.faq-layout{flex-direction:column}.faq-cat-nav{width:100%;position:static}.faq-cat-nav-inner{display:flex;flex-wrap:wrap;gap:4px;padding:.5rem}.faq-cat-btn{width:auto;padding:4px 10px;border:1px solid var(--border);border-radius:20px}}
 .step-section{margin-bottom:1.5rem}
 .step-section-label{display:inline-block;font-size:13px;font-weight:700;color:#fff;background:linear-gradient(135deg,#5c3fc4,#7c5ce4);padding:6px 16px;border-radius:var(--radius-sm);margin-bottom:.85rem;letter-spacing:.01em;box-shadow:0 2px 8px rgba(92,63,196,.25)}
 
@@ -208,7 +219,7 @@ table.main-tbl tbody tr:hover td{background:var(--surface2)}
         <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>예산 조정 신청
       </button>
       <button class="nav-item" onclick="go('check',this)">
-        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>현황 조회
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>예산 현황 조회
       </button>
       <button class="nav-item" onclick="go('notes',this)">
         <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>유의사항
@@ -217,7 +228,7 @@ table.main-tbl tbody tr:hover td{background:var(--surface2)}
         <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>자주 묻는 질문
       </button>
       <button class="nav-item" onclick="go('cctr',this)">
-        <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>코스트센터
+        <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>코스트센터 조회
       </button>
     </div>
   </aside>
@@ -228,13 +239,13 @@ table.main-tbl tbody tr:hover td{background:var(--surface2)}
     <div id="home" class="page active">
       <h1>IP사업본부(예능사업群) 부서예산 Guide</h1>
       <p class="page-note">※ Non-Scripted BU, 디지털신사업담당, 콘텐츠마케팅담당 등</p>
-      <p class="page-sub">예산 조정 신청 · 조회 등 주요 절차 및 유의사항 정리 — IP)사업기획1팀</p>
+      <p class="page-sub">예산 조정 신청 · 조회 등 주요 절차 및 유의사항 정리</p>
       <div class="home-grid">
         <div class="home-card" onclick="go('apply',document.querySelectorAll('.nav-item')[1])"><div class="home-card-icon">📋</div><h3>예산 조정 신청</h3><p>품의 → BizOne</p></div>
         <div class="home-card" onclick="go('check',document.querySelectorAll('.nav-item')[2])"><div class="home-card-icon">📊</div><h3>예산 현황 조회</h3><p>잔액 및 조정 내역 확인</p></div>
         <div class="home-card" onclick="go('notes',document.querySelectorAll('.nav-item')[3])"><div class="home-card-icon">⚠️</div><h3>유의사항</h3><p>예산 처리 시 주의사항</p></div>
         <div class="home-card" onclick="go('faq',document.querySelectorAll('.nav-item')[4])"><div class="home-card-icon">💬</div><h3>자주 묻는 질문</h3><p>FAQ 모음</p></div>
-        <div class="home-card" onclick="go('cctr',document.querySelectorAll('.nav-item')[5])"><div class="home-card-icon">🏢</div><h3>코스트센터</h3><p>조직별 CCTR 코드</p></div>
+        <div class="home-card" onclick="go('cctr',document.querySelectorAll('.nav-item')[5])"><div class="home-card-icon">🏢</div><h3>코스트센터 조회</h3><p>조직별 고유 코드</p></div>
       </div>
       <div class="contact-card">
         <div class="contact-avatar">김</div>
@@ -244,154 +255,151 @@ table.main-tbl tbody tr:hover td{background:var(--surface2)}
 
     <!-- 예산 조정 신청 -->
     <div id="apply" class="page">
+      <button class="home-btn" onclick="go('home',document.querySelector('.nav-item'))">← 홈으로</button>
       <h1>예산 조정 신청</h1>
       <p class="page-sub">사전 품의 진행 후 BizOne에서 예산조정신청을 완료하는 2단계 절차입니다.</p>
-      <div class="tab-row">
-        <button class="tab-btn active" onclick="showTab('apply','a-guide',this)">단계별 안내</button>
-        <button class="tab-btn" onclick="showTab('apply','a-bizone',this)">BizOne 화면 체험</button>
-      </div>
+      
 
-      <div id="a-guide" class="tab-content active">
-        <div class="step-section">
-          <div class="step-section-label">1단계 — 사전 품의 진행</div>
-          <div class="steps">
-            <div class="step"><div class="step-num">1</div><div class="step-body"><h4>품의서 작성</h4><p>예산 조정 사유 및 현황을 기재하여 품의를 진행합니다.<br><span style="font-size:11px;color:var(--text3)">※ 기존 예산, 현재 잔액, 조정 금액, 조정 후 예산 포함 필수</span></p></div></div>
-            <div class="step"><div class="step-num">2</div><div class="step-body">
-              <h4>결재선</h4>
-              <div class="flow-wrap">
-                <div class="flow-row">
-                  <div class="flow-col"><span class="flow-label">조정</span><div class="flow-node">1차 상사<small>팀장/CP (부재 시 생략)</small></div></div>
-                  <span class="flow-arr">›</span>
-                  <div class="flow-col"><span class="flow-label-empty">합의</span><div class="flow-node">IP사업기획1팀<small>합의</small></div></div>
-                  <span class="flow-arr">›</span>
-                  <div class="flow-col"><span class="flow-label">결재</span><div class="flow-node">2차 상사<small>담당/사업부장/EP</small></div></div>
-                </div>
-                <div style="margin-top:.75rem;font-size:12px;color:var(--text2);background:var(--warn-bg);border:1px solid var(--warn-border);border-radius:var(--radius-sm);padding:.65rem .9rem;line-height:1.7">
-                  <strong style="color:var(--warn-text)">⚠️ 아래 경우는 IP사업기획담당 합의 지정</strong><br>
-                  · 예산 추가 1천만원 이상<br>
-                  · 지급수수료 전용 건 (금액 무관)<br>
-                  · 예산 內 계정간 전용
-                </div>
+      <div class="step-section">
+        <div class="step-section-label">1단계 — 사전 World 품의 진행</div>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-body"><h4>품의서 작성</h4><p>예산 조정 사유 및 현황을 기재하여 품의를 진행합니다.<br><span style="font-size:11px;color:var(--text3)">※ 기존 예산, 현재 잔액, 조정 금액, 조정 후 예산 포함 필수</span></p></div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-body">
+            <h4>결재선</h4>
+            <div class="flow-wrap">
+              <div class="flow-row">
+                <div class="flow-col"><span class="flow-label">조정</span><div class="flow-node">1차 상사<small>팀장/CP (부재 시 생략)</small></div></div>
+                <span class="flow-arr">›</span>
+                <div class="flow-col"><span class="flow-label-empty">합의</span><div class="flow-node">IP사업기획1팀<small>합의</small></div></div>
+                <span class="flow-arr">›</span>
+                <div class="flow-col"><span class="flow-label">결재</span><div class="flow-node">2차 상사<small>담당/사업부장/EP</small></div></div>
               </div>
-            </div></div>
-          </div>
+              <div style="margin-top:.75rem;font-size:12px;color:var(--text2);background:var(--warn-bg);border:1px solid var(--warn-border);border-radius:var(--radius-sm);padding:.65rem .9rem;line-height:1.7">
+                <strong style="color:var(--warn-text)">⚠️ 아래 경우는 IP사업기획담당 합의 지정</strong><br>
+                · 예산 추가 1천만원 이상<br>
+                · 지급수수료 전용 건 (금액 무관)<br>
+                · 예산 內 계정간 전용
+              </div>
+            </div>
+          </div></div>
         </div>
-        <div class="step-section">
-          <div class="step-section-label">2단계 — BizOne 예산조정신청</div>
-          <div class="steps">
-            <div class="step"><div class="step-num">1</div><div class="step-body"><h4>BizOne 접속</h4><p>BizOne › 내메뉴 → 부서경비계획관리 › 부서예산 › 예산조정신청</p></div></div>
-            <div class="step"><div class="step-num">2</div><div class="step-body"><h4>목록에서 + 버튼 클릭</h4><p>오른쪽 파란 <strong>+</strong> 버튼 클릭 → 행 추가 → <strong>조정유형</strong>(추가/전용/기간전용) 선택 → <strong>적요</strong>에 품의 제목 그대로 기재</p></div></div>
-            <div class="step"><div class="step-num">3</div><div class="step-body"><h4>상세내역 + 버튼 클릭 후 입력</h4><p><strong>예산월</strong> 선택 · <strong>코스트센터</strong> 부서명 검색 · <strong>계정</strong> 선택 · <strong>센터</strong>(소속 사업부/담당/EP) · <strong>적용값</strong>(+/-) · <strong>금액</strong> 입력 · <strong>예산조정사유</strong> 기재</p><span class="badge badge-info">전용 시: 예산 주는 달(−) / 받는 달(+) 행 각각 추가</span></div></div>
-            <div class="step"><div class="step-num">4</div><div class="step-body"><h4>파일 첨부 및 전자결재</h4><p>'파일첨부' 버튼으로 품의서 첨부 → 결재선 <strong>IP)사업기획1팀장 장세영님</strong> 지정 → <strong>전자결재</strong> 버튼 클릭</p></div></div>
-          </div>
-        </div>
-        <div class="alert alert-info" style="align-items:center"><span class="alert-icon" style="line-height:1;margin-top:0">ℹ️</span><span>부서 간 전용 시 예산 전용 부서(−)와 전용 받는 부서(+)를 모두 지정해야 합니다.</span></div>
       </div>
-
-      <div id="a-bizone" class="tab-content">
-        <div class="hint-box"><strong>💡 이렇게 사용하세요</strong><ul><li>목록 파란 <strong>+</strong> 버튼으로 행 추가 → 조정유형·적요 입력</li><li>상세내역 파란 <strong>+</strong> 버튼으로 행 추가 → 각 항목 입력</li></ul></div>
-        <div class="bz-wrap">
-          <div class="bz-topbar"><span class="bz-topbar-left">Biz One</span><span class="bz-topbar-right">김하고잡이님 (2:59:03) &nbsp;|&nbsp; HELP</span></div>
-          <div class="bz-navbar"><div class="bz-nav-item active">내메뉴</div></div>
-          <div class="bz-breadcrumb">부서경비계획관리 <span>›</span> 부서예산 <span>›</span> <strong>예산조정신청</strong></div>
-          <div class="bz-toolbar">
-            <div class="bz-title">📋 예산조정신청 <span class="bz-help">도움말</span></div>
-            <div class="bz-btns">
-              <button class="bz-btn bz-btn-search">조회</button>
-              <button class="bz-btn bz-btn-new">신규</button>
-              <button class="bz-btn bz-btn-save">저장</button>
-              <button class="bz-btn bz-btn-submit" onclick="bzSubmit()">전자결재</button>
-            </div>
-          </div>
-          <div class="bz-filter">
-            <div class="bz-filter-row"><span class="bz-filter-label req">회계년도</span><input class="bz-input" value="2026" style="width:70px"/></div>
-            <div class="bz-filter-row"><span class="bz-filter-label req">회사코드</span><input class="bz-input" value="CJ ENM" readonly/></div>
-            <div class="bz-filter-row"><span class="bz-filter-label req">사업영역</span><input class="bz-input" value="미디어콘텐츠" readonly/></div>
-            <div class="bz-filter-row"><span class="bz-filter-label">코스트센터</span><input class="bz-input" id="bzCostFilter" placeholder="검색..."/></div>
-            <div class="bz-filter-row"><span class="bz-filter-label">조정유형</span><select class="bz-select"><option>전체</option><option>추가</option><option>전용</option><option>기간전용</option></select></div>
-            <div class="bz-filter-row"><span class="bz-filter-label">문서상태</span><select class="bz-select"><option>전체</option><option>작성중</option><option>결재완료</option></select></div>
-          </div>
-          <div class="bz-section">
-            <div class="bz-section-header">
-              <span class="bz-section-title">예산조정신청 목록</span>
-              <div class="bz-section-right">첨부파일 <input class="bz-input" value="0" style="width:40px;text-align:center"/> &nbsp;<button class="bz-btn bz-btn-search" style="font-size:10px;padding:2px 8px">파일첨부</button><button class="bz-add-btn blue" onclick="bzAddRow()">+</button><button class="bz-add-btn red" onclick="bzRemoveRow()">−</button></div>
-            </div>
-            <div style="overflow-x:auto">
-              <table class="bz-table"><thead><tr><th style="width:30px">No.</th><th style="width:24px"></th><th style="width:24px"></th><th style="width:60px">회계년도</th><th style="width:80px">예산번호</th><th style="width:70px">조정유형</th><th style="width:90px">신청일자</th><th style="width:80px">신청자</th><th style="width:100px">소속코스트센터</th><th style="min-width:160px">적요</th><th style="width:70px">상태</th><th style="width:80px">전자결재<br>진행상태</th><th style="width:80px">조정신청<br>확정상태</th><th style="width:80px">승인일자</th><th style="width:80px">경관승인일자</th></tr></thead><tbody id="bzListBody"></tbody></table>
-            </div>
-          </div>
-          <div class="bz-section" style="padding-bottom:8px">
-            <div class="bz-section-header">
-              <span class="bz-section-title">예산조정신청 상세내역</span>
-              <div class="bz-section-right"><button class="bz-add-btn blue" onclick="bzAddDetail()">+</button><button class="bz-add-btn red" onclick="bzRemoveDetail()">−</button></div>
-            </div>
-            <div style="overflow-x:auto">
-              <table class="bz-table"><thead><tr><th style="width:28px">No.</th><th style="width:24px"></th><th style="width:70px">예산월</th><th style="width:90px">사업영역</th><th style="width:90px">코스트센터</th><th style="width:120px">코스트센터명</th><th style="width:80px">계정</th><th style="width:160px">계정과목명</th><th style="width:80px">센터</th><th style="width:70px">예산</th><th style="width:70px">실적</th><th style="width:70px">잔액</th><th style="width:60px">적용값</th><th style="width:80px">금액</th><th style="width:80px">조정후잔액</th><th style="min-width:140px">예산조정사유</th><th style="width:70px">예산계획<br>등록여부</th><th style="width:70px">예산잔액조회<br>성공여부</th></tr></thead><tbody id="bzDetailBody"></tbody></table>
-            </div>
-          </div>
-          <div class="bz-foot"><span>합계 &nbsp; 예산: <span id="bzTotalBudget">0</span> &nbsp; 실적: <span id="bzTotalActual">0</span> &nbsp; 잔액: <span id="bzTotalRemain">0</span> &nbsp; 금액: <span id="bzTotalAmount">0</span></span></div>
+      <div class="step-section">
+        <div class="step-section-label">2단계 — BizOne 예산조정신청</div>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-body"><h4>BizOne 접속</h4><p>BizOne › 내메뉴 → 부서경비계획관리 › 부서예산 › 예산조정신청</p></div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-body"><h4>목록에서 + 버튼 클릭</h4><p>오른쪽 파란 <strong>+</strong> 버튼 클릭 → 행 추가 → <strong>조정유형</strong>(추가/전용/기간전용) 선택 → <strong>적요</strong>에 품의 제목 그대로 기재</p></div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-body"><h4>상세내역 + 버튼 클릭 후 입력</h4><p><strong>예산월</strong> 선택 · <strong>코스트센터 조회</strong> 부서명 검색 · <strong>계정</strong> 선택 · <strong>센터</strong>(소속 사업부/담당/EP) · <strong>적용값</strong>(+/-) · <strong>금액</strong> 입력 · <strong>예산조정사유</strong> 기재</p><span class="badge badge-info">전용 시: 예산 주는 달(−) / 받는 달(+) 행 각각 추가</span></div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-body"><h4>파일 첨부 및 전자결재</h4><p>'파일첨부' 버튼으로 품의서 첨부 → 결재선 <strong>IP)사업기획1팀장 장세영님</strong> 지정 → <strong>전자결재</strong> 버튼 클릭</p></div></div>
         </div>
+      </div>
+      <div class="alert alert-info" style="align-items:center;margin-bottom:1.5rem"><span class="alert-icon" style="line-height:1;margin-top:0">ℹ️</span><span>부서 간 전용 시 예산 전용 부서(−)와 전용 받는 부서(+)를 모두 지정해야 합니다.</span></div>
+
+      <hr style="border:none;border-top:1px solid var(--border);margin-bottom:1.5rem"/>
+      <div class="step-section-label" style="margin-bottom:1rem">BizOne 화면 체험</div>
+
+      <div class="hint-box" style="margin-bottom:1rem"><strong>💡 이렇게 사용하세요</strong><ul><li>목록 파란 <strong>+</strong> 버튼으로 행 추가 → 조정유형·적요 입력</li><li>상세내역 파란 <strong>+</strong> 버튼으로 행 추가 → 각 항목 입력</li></ul></div>
+      <div class="bz-wrap">
+        <div class="bz-topbar"><span class="bz-topbar-left">Biz One</span><span class="bz-topbar-right">김하고잡이님 (2:59:03) &nbsp;|&nbsp; HELP</span></div>
+        <div class="bz-navbar"><div class="bz-nav-item active">내메뉴</div></div>
+        <div class="bz-breadcrumb">부서경비계획관리 <span>›</span> 부서예산 <span>›</span> <strong>예산조정신청</strong></div>
+        <div class="bz-toolbar">
+          <div class="bz-title">📋 예산조정신청 <span class="bz-help">도움말</span></div>
+          <div class="bz-btns">
+            <button class="bz-btn bz-btn-search">조회</button>
+            <button class="bz-btn bz-btn-new">신규</button>
+            <button class="bz-btn bz-btn-save">저장</button>
+            <button class="bz-btn bz-btn-submit" onclick="bzSubmit()">전자결재</button>
+          </div>
+        </div>
+        <div class="bz-filter">
+          <div class="bz-filter-row"><span class="bz-filter-label req">회계년도</span><input class="bz-input" value="2026" style="width:70px"/></div>
+          <div class="bz-filter-row"><span class="bz-filter-label req">회사코드</span><input class="bz-input" value="CJ ENM" readonly/></div>
+          <div class="bz-filter-row"><span class="bz-filter-label req">사업영역</span><input class="bz-input" value="미디어콘텐츠" readonly/></div>
+          <div class="bz-filter-row"><span class="bz-filter-label">코스트센터 조회</span><input class="bz-input" id="bzCostFilter" placeholder="검색..."/></div>
+          <div class="bz-filter-row"><span class="bz-filter-label">조정유형</span><select class="bz-select"><option>전체</option><option>추가</option><option>전용</option><option>기간전용</option></select></div>
+          <div class="bz-filter-row"><span class="bz-filter-label">문서상태</span><select class="bz-select"><option>전체</option><option>작성중</option><option>결재완료</option></select></div>
+        </div>
+        <div class="bz-section">
+          <div class="bz-section-header">
+            <span class="bz-section-title">예산조정신청 목록</span>
+            <div class="bz-section-right">첨부파일 <input class="bz-input" value="0" style="width:40px;text-align:center"/> &nbsp;<button class="bz-btn bz-btn-search" style="font-size:10px;padding:2px 8px">파일첨부</button><button class="bz-add-btn blue" onclick="bzAddRow()">+</button><button class="bz-add-btn red" onclick="bzRemoveRow()">−</button></div>
+          </div>
+          <div style="overflow-x:auto">
+            <table class="bz-table"><thead><tr><th style="width:30px">No.</th><th style="width:24px"></th><th style="width:24px"></th><th style="width:60px">회계년도</th><th style="width:80px">예산번호</th><th style="width:70px">조정유형</th><th style="width:90px">신청일자</th><th style="width:80px">신청자</th><th style="width:100px">소속코스트센터</th><th style="min-width:160px">적요</th><th style="width:70px">상태</th><th style="width:80px">전자결재<br>진행상태</th><th style="width:80px">조정신청<br>확정상태</th><th style="width:80px">승인일자</th><th style="width:80px">경관승인일자</th></tr></thead><tbody id="bzListBody"></tbody></table>
+          </div>
+        </div>
+        <div class="bz-section" style="padding-bottom:8px">
+          <div class="bz-section-header">
+            <span class="bz-section-title">예산조정신청 상세내역</span>
+            <div class="bz-section-right"><button class="bz-add-btn blue" onclick="bzAddDetail()">+</button><button class="bz-add-btn red" onclick="bzRemoveDetail()">−</button></div>
+          </div>
+          <div style="overflow-x:auto">
+            <table class="bz-table"><thead><tr><th style="width:28px">No.</th><th style="width:24px"></th><th style="width:70px">예산월</th><th style="width:90px">사업영역</th><th style="width:90px">코스트센터 조회</th><th style="width:120px">코스트센터명</th><th style="width:80px">계정</th><th style="width:160px">계정과목명</th><th style="width:80px">센터</th><th style="width:70px">예산</th><th style="width:70px">실적</th><th style="width:70px">잔액</th><th style="width:60px">적용값</th><th style="width:80px">금액</th><th style="width:80px">조정후잔액</th><th style="min-width:140px">예산조정사유</th><th style="width:70px">예산계획<br>등록여부</th><th style="width:70px">예산잔액조회<br>성공여부</th></tr></thead><tbody id="bzDetailBody"></tbody></table>
+          </div>
+        </div>
+        <div class="bz-foot"><span>합계 &nbsp; 예산: <span id="bzTotalBudget">0</span> &nbsp; 실적: <span id="bzTotalActual">0</span> &nbsp; 잔액: <span id="bzTotalRemain">0</span> &nbsp; 금액: <span id="bzTotalAmount">0</span></span></div>
       </div>
     </div>
 
     <!-- 현황 조회 -->
     <div id="check" class="page">
+      <button class="home-btn" onclick="go('home',document.querySelector('.nav-item'))">← 홈으로</button>
       <h1>예산 현황 조회</h1>
-      <p class="page-sub">예산 잔액 및 조정 내역 확인을 위한 조회 방법 안내 — IP)사업기획1팀</p>
-      <div class="tab-row">
-        <button class="tab-btn active" onclick="showTab('check','c-guide',this)">단계별 안내</button>
-        <button class="tab-btn" onclick="showTab('check','c-bizone',this)">BizOne 화면 체험</button>
-      </div>
+      <p class="page-sub">예산 잔액 및 조정 내역 확인을 위한 조회 방법 안내</p>
+      
 
-      <div id="c-guide" class="tab-content active">
-        <div class="step-section">
-          <div class="step-section-label">예산 현황 조회 방법</div>
-          <div class="steps">
-            <div class="step"><div class="step-num">1</div><div class="step-body"><h4>BizOne 접속</h4><p>BizOne › 내메뉴 → 부서경비계획관리 › 부서예산 › 기간별 예산대비실적조회</p></div></div>
-            <div class="step"><div class="step-num">2</div><div class="step-body"><h4>코스트센터 및 기간 입력</h4><p>코스트센터 코드 입력 후 조회할 기간(시작~종료)을 지정하여 조회 버튼 클릭</p></div></div>
-            <div class="step"><div class="step-num">3</div><div class="step-body"><h4>결과 확인</h4><p>총 예산, 추가·전용·기간전용 값, 실적총액, 잔액 확인 가능</p></div></div>
+      <div class="step-section">
+        <div class="step-section-label">예산 현황 조회 방법</div>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-body"><h4>BizOne 접속</h4><p>BizOne › 내메뉴 → 부서경비계획관리 › 부서예산 › 기간별 예산대비실적조회</p></div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-body"><h4>코스트센터 및 기간 입력</h4><p>코스트센터 코드 입력 후 조회할 기간(시작~종료)을 지정하여 조회 버튼 클릭</p></div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-body"><h4>결과 확인</h4><p>총 예산, 추가·전용·기간전용 값, 실적총액, 잔액 확인 가능</p></div></div>
+        </div>
+      </div>
+      <div class="alert alert-info" style="align-items:center;margin-bottom:1.5rem"><span class="alert-icon" style="line-height:1;margin-top:0">ℹ️</span><span>코스트센터 코드는 <strong>코스트센터 조회 탭</strong>에서 확인하세요. 예: 사업기획1팀 → A0335</span></div>
+
+      <hr style="border:none;border-top:1px solid var(--border);margin-bottom:1.5rem"/>
+      <div class="step-section-label" style="margin-bottom:1rem">BizOne 화면 체험</div>
+
+      <div class="hint-box" style="margin-bottom:1rem"><strong>💡 이렇게 사용하세요</strong><ul><li>코스트센터 코드 입력 후 조회 버튼을 누르세요.</li><li>샘플 코드: A0335 / A0336 / A0710 / A0716</li><li>조회기간에 따라 월별 컬럼(기초예산, 추가, 전용, 실적, 잔액)이 자동으로 생성됩니다.</li></ul></div>
+      <div class="bz-wrap">
+        <div class="bz-topbar"><span class="bz-topbar-left">Biz One</span><span class="bz-topbar-right">김하고잡이님 (2:59:03) &nbsp;|&nbsp; HELP</span></div>
+        <div class="bz-navbar"><div class="bz-nav-item active">내메뉴</div></div>
+        <div class="bz-breadcrumb">부서경비계획관리 <span>›</span> 부서예산 <span>›</span> <strong>기간별 예산대비실적조회</strong></div>
+        <div class="bz-toolbar">
+          <div class="bz-title">📊 기간별 예산대비실적조회 <span class="bz-help">도움말</span></div>
+          <div class="bz-btns"><button class="bz-btn bz-btn-search" onclick="bzQueryCheck()">조회</button></div>
+        </div>
+        <div class="bz-filter" style="grid-template-columns:1fr 1fr 1fr 1fr">
+          <div class="bz-filter-row"><span class="bz-filter-label req">회계년도</span><input class="bz-input" value="2026" style="width:60px"/></div>
+          <div class="bz-filter-row"><span class="bz-filter-label req">회사코드</span><input class="bz-input" value="CJ ENM" readonly/></div>
+          <div class="bz-filter-row"><span class="bz-filter-label req">사업영역</span><input class="bz-input" value="미디어콘텐츠" readonly/></div>
+          <div class="bz-filter-row"><span class="bz-filter-label">조정유형</span><select class="bz-select"><option>전체</option><option>추가</option><option>전용</option><option>기간전용</option></select></div>
+          <div class="bz-filter-row" style="grid-column:span 2"><span class="bz-filter-label req">코스트센터 조회</span><div class="bz-search-cell" style="flex:1"><input class="bz-input" id="checkCostInput" placeholder="코드 입력 (예: A0335)"/><button onclick="bzQueryCheck()" style="border:1px solid #90b4d8;background:#e8eef8;border-radius:2px;padding:3px 8px;font-size:11px;cursor:pointer;color:#1a3a6b">조회</button></div></div>
+          <div class="bz-filter-row"><span class="bz-filter-label req">시작월</span><select class="bz-select" id="checkFromMonth"><option value="1">1월</option><option value="2">2월</option><option value="3">3월</option><option value="4" selected>4월</option><option value="5">5월</option><option value="6">6월</option><option value="7">7월</option><option value="8">8월</option><option value="9">9월</option><option value="10">10월</option><option value="11">11월</option><option value="12">12월</option></select></div>
+          <div class="bz-filter-row"><span class="bz-filter-label req">종료월</span><select class="bz-select" id="checkToMonth"><option value="1">1월</option><option value="2">2월</option><option value="3">3월</option><option value="4" selected>4월</option><option value="5">5월</option><option value="6">6월</option><option value="7">7월</option><option value="8">8월</option><option value="9">9월</option><option value="10">10월</option><option value="11">11월</option><option value="12">12월</option></select></div>
+        </div>
+        <div class="bz-section" style="padding-bottom:8px">
+          <div class="bz-section-header"><span class="bz-section-title">기간별 예산대비실적 목록</span></div>
+          <div style="overflow-x:auto">
+            <table class="bz-table" id="checkResultTable">
+              <thead id="checkHead"></thead>
+              <tbody id="checkResultBody"><tr><td colspan="20" style="text-align:center;color:#999;padding:20px">코스트센터 코드를 입력하고 조회 버튼을 눌러주세요.<br><span style="font-size:10px">예시: A0335, A0336, A0710, A0716</span></td></tr></tbody>
+            </table>
           </div>
         </div>
-        <div class="alert alert-info" style="align-items:center"><span class="alert-icon" style="line-height:1;margin-top:0">ℹ️</span><span>코스트센터 코드는 <strong>코스트센터 탭</strong>에서 확인하세요. 예: 사업기획1팀 → A0335</span></div>
-      </div>
-
-      <div id="c-bizone" class="tab-content">
-        <div class="hint-box"><strong>💡 이렇게 사용하세요</strong><ul><li>코스트센터 코드 입력 후 조회 버튼을 누르세요.</li><li>샘플 코드: A0335 / A0336 / A0710 / A0716</li><li>조회기간에 따라 월별 컬럼(기초예산, 추가, 전용, 실적, 잔액)이 자동으로 생성됩니다.</li></ul></div>
-        <div class="bz-wrap">
-          <div class="bz-topbar"><span class="bz-topbar-left">Biz One</span><span class="bz-topbar-right">김하고잡이님 (2:59:03) &nbsp;|&nbsp; HELP</span></div>
-          <div class="bz-navbar"><div class="bz-nav-item active">내메뉴</div></div>
-          <div class="bz-breadcrumb">부서경비계획관리 <span>›</span> 부서예산 <span>›</span> <strong>기간별 예산대비실적조회</strong></div>
-          <div class="bz-toolbar">
-            <div class="bz-title">📊 기간별 예산대비실적조회 <span class="bz-help">도움말</span></div>
-            <div class="bz-btns"><button class="bz-btn bz-btn-search" onclick="bzQueryCheck()">조회</button></div>
-          </div>
-          <div class="bz-filter" style="grid-template-columns:1fr 1fr 1fr 1fr">
-            <div class="bz-filter-row"><span class="bz-filter-label req">회계년도</span><input class="bz-input" value="2026" style="width:60px"/></div>
-            <div class="bz-filter-row"><span class="bz-filter-label req">회사코드</span><input class="bz-input" value="CJ ENM" readonly/></div>
-            <div class="bz-filter-row"><span class="bz-filter-label req">사업영역</span><input class="bz-input" value="미디어콘텐츠" readonly/></div>
-            <div class="bz-filter-row"><span class="bz-filter-label">조정유형</span><select class="bz-select"><option>전체</option><option>추가</option><option>전용</option><option>기간전용</option></select></div>
-            <div class="bz-filter-row" style="grid-column:span 2"><span class="bz-filter-label req">코스트센터</span><div class="bz-search-cell" style="flex:1"><input class="bz-input" id="checkCostInput" placeholder="코드 입력 (예: A0335)"/><button onclick="bzQueryCheck()" style="border:1px solid #90b4d8;background:#e8eef8;border-radius:2px;padding:3px 8px;font-size:11px;cursor:pointer;color:#1a3a6b">조회</button></div></div>
-            <div class="bz-filter-row"><span class="bz-filter-label req">시작월</span><select class="bz-select" id="checkFromMonth"><option value="1">1월</option><option value="2">2월</option><option value="3">3월</option><option value="4" selected>4월</option><option value="5">5월</option><option value="6">6월</option><option value="7">7월</option><option value="8">8월</option><option value="9">9월</option><option value="10">10월</option><option value="11">11월</option><option value="12">12월</option></select></div>
-            <div class="bz-filter-row"><span class="bz-filter-label req">종료월</span><select class="bz-select" id="checkToMonth"><option value="1">1월</option><option value="2">2월</option><option value="3">3월</option><option value="4" selected>4월</option><option value="5">5월</option><option value="6">6월</option><option value="7">7월</option><option value="8">8월</option><option value="9">9월</option><option value="10">10월</option><option value="11">11월</option><option value="12">12월</option></select></div>
-          </div>
-          <div class="bz-section" style="padding-bottom:8px">
-            <div class="bz-section-header"><span class="bz-section-title">기간별 예산대비실적 목록</span></div>
-            <div style="overflow-x:auto">
-              <table class="bz-table" id="checkResultTable">
-                <thead id="checkHead"></thead>
-                <tbody id="checkResultBody"><tr><td colspan="20" style="text-align:center;color:#999;padding:20px">코스트센터 코드를 입력하고 조회 버튼을 눌러주세요.<br><span style="font-size:10px">예시: A0335, A0336, A0710, A0716</span></td></tr></tbody>
-              </table>
-            </div>
-          </div>
-          <div class="bz-foot"><span>합계 &nbsp; 총예산: <span id="checkTotalBudget">-</span> &nbsp; 실적총액: <span id="checkTotalActual">-</span> &nbsp; 잔액: <span id="checkTotalRemain">-</span></span></div>
-        </div>
+        <div class="bz-foot"><span>합계 &nbsp; 총예산: <span id="checkTotalBudget">-</span> &nbsp; 실적총액: <span id="checkTotalActual">-</span> &nbsp; 잔액: <span id="checkTotalRemain">-</span></span></div>
       </div>
     </div>
 
     <!-- 유의사항 -->
     <div id="notes" class="page">
+      <button class="home-btn" onclick="go('home',document.querySelector('.nav-item'))">← 홈으로</button>
       <h1>유의사항</h1>
       <p class="page-sub">예산 조정 신청 시 반드시 확인해야 할 사항들입니다.</p>
+      
+
       <div class="notes-grid">
         <div class="note-card danger">
           <div class="note-icon">🚫</div>
@@ -436,8 +444,11 @@ table.main-tbl tbody tr:hover td{background:var(--surface2)}
 
     <!-- FAQ + AI -->
     <div id="faq" class="page">
+      <button class="home-btn" onclick="go('home',document.querySelector('.nav-item'))">← 홈으로</button>
       <h1>자주 묻는 질문</h1>
-      <p class="page-sub">키워드로 검색하거나 아래 목록에서 확인하세요. — IP)사업기획1팀</p>
+      <p class="page-sub">키워드로 검색하거나 아래 목록에서 확인하세요.</p>
+      
+
 
       <!-- 키워드 검색 -->
       <div class="faq-search-box">
@@ -461,9 +472,26 @@ table.main-tbl tbody tr:hover td{background:var(--surface2)}
         <span class="chip" onclick="faqChip('멤버십')">멤버십</span>
       </div>
 
-      <!-- FAQ 목록 -->
-      <div id="faqList">
-        <div style="font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--text3);text-transform:uppercase;margin-bottom:.6rem">예산/권한</div>
+      <!-- FAQ 목록 + 카테고리 사이드 메뉴 -->
+      <div class="faq-layout">
+        <div class="faq-cat-nav">
+          <div class="faq-cat-nav-inner">
+            <div class="faq-cat-nav-title">카테고리</div>
+            <button class="faq-cat-btn active" onclick="scrollCat('cat-budget')">예산/권한</button>
+            <button class="faq-cat-btn" onclick="scrollCat('cat-transfer')">예산/전용</button>
+            <button class="faq-cat-btn" onclick="scrollCat('cat-settle')">정산/품의</button>
+            <button class="faq-cat-btn" onclick="scrollCat('cat-card')">법인카드</button>
+            <button class="faq-cat-btn" onclick="scrollCat('cat-it')">IT자산</button>
+            <button class="faq-cat-btn" onclick="scrollCat('cat-produce')">제작비/경비</button>
+            <button class="faq-cat-btn" onclick="scrollCat('cat-meeting')">회의비</button>
+            <button class="faq-cat-btn" onclick="scrollCat('cat-drive')">대리운전</button>
+            <button class="faq-cat-btn" onclick="scrollCat('cat-member')">멤버십</button>
+            <button class="faq-cat-btn" onclick="scrollCat('cat-ai')">AI 툴비</button>
+            <button class="faq-cat-btn" onclick="scrollCat('cat-travel')">출장일비</button>
+          </div>
+        </div>
+        <div class="faq-main" id="faqList">
+        <div id="cat-budget" style="font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--text3);text-transform:uppercase;margin-bottom:.6rem;scroll-margin-top:16px">예산/권한</div>
         <div class="faq-item" data-tags="예산 부서예산 조회 확인 BizOne"><button class="faq-q" onclick="tf(this)">부서 예산은 어디서 확인하나요? <span class="faq-chevron">▼</span></button>
           <div class="faq-a"><strong>BizOne > 비용계획 > 부서예산 > 기간별 예산대비실적조회</strong>에서 확인하실 수 있습니다.</div></div>
         <div class="faq-item" data-tags="예산 조회 정산 절차 권한 시스템"><button class="faq-q" onclick="tf(this)">부서예산 조회나 정산 전에 필요한 절차가 있나요? <span class="faq-chevron">▼</span></button>
@@ -471,7 +499,7 @@ table.main-tbl tbody tr:hover td{background:var(--surface2)}
         <div class="faq-item" data-tags="인원경비 부서경비 차이 경비"><button class="faq-q" onclick="tf(this)">인원경비와 부서경비는 어떻게 다른가요? <span class="faq-chevron">▼</span></button>
           <div class="faq-a">인원경비는 인원별로 부여되는 기초 예산으로, 회의비·소모품비·시내교통비·교육훈련비 등이 포함됩니다. 부서경비는 인원경비 외에 부서 운영상 추가로 필요한 비용을 처리하기 위한 예산입니다.</div></div>
 
-        <div style="font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--text3);text-transform:uppercase;margin:.9rem 0 .6rem">예산/전용</div>
+        <div id="cat-transfer" style="font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--text3);text-transform:uppercase;margin:.9rem 0 .6rem;scroll-margin-top:16px">예산/전용</div>
         <div class="faq-item" data-tags="이월 전용 자동 분기"><button class="faq-q" onclick="tf(this)">예산 이월은 자동으로 되나요? <span class="faq-chevron">▼</span></button>
           <div class="faq-a"><strong>예산은 자동 이월되지 않습니다.</strong> 이월 또는 전용이 필요한 경우 별도 품의 결재 후 예산조정신청을 진행해야 하며, 담당 부서 승인 후 반영됩니다. 분기가 경과해도 다음 분기로 자동 전용되지 않으므로 반드시 <strong>별도 신청</strong>이 필요합니다.</div></div>
         <div class="faq-item" data-tags="기간전용 전용 차이"><button class="faq-q" onclick="tf(this)">기간 전용과 전용의 차이가 뭔가요? <span class="faq-chevron">▼</span></button>
@@ -481,7 +509,7 @@ table.main-tbl tbody tr:hover td{background:var(--surface2)}
         <div class="faq-item" data-tags="유류대 조직장 비조직장 전용"><button class="faq-q" onclick="tf(this)">조직장이 아니어도 유류대 처리가 가능한가요? <span class="faq-chevron">▼</span></button>
           <div class="faq-a">넵, 가능합니다. <strong>개인카드 결제 후 시내교통비 계정에서 예산 전용(전용 신청 전, 품의 기안 必)</strong> 후 유류대 정산 부탁드립니다.</div></div>
 
-        <div style="font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--text3);text-transform:uppercase;margin:.9rem 0 .6rem">정산/품의</div>
+        <div id="cat-settle" style="font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--text3);text-transform:uppercase;margin:.9rem 0 .6rem;scroll-margin-top:16px">정산/품의</div>
         <div class="faq-item" data-tags="당월 정산 품의 누락"><button class="faq-q" onclick="tf(this)">당월에 정산 못한 건은 무조건 품의를 써야 하나요? <span class="faq-chevron">▼</span></button>
           <div class="faq-a">당월 사용분은 당월 내 정산하는 것이 원칙입니다. 당월 내 정산하지 못한 건은 지연 사유와 처리 가능 여부를 확인한 뒤 필요한 절차에 따라 <strong>누락품의 기안 후 정산</strong>해 주세요.</div></div>
         <div class="faq-item" data-tags="임시전기 재무 정산 완료"><button class="faq-q" onclick="tf(this)">정산 완료했는데, 임시 전기 상태에서 다음으로 안 넘어가요 <span class="faq-chevron">▼</span></button>
@@ -489,39 +517,39 @@ table.main-tbl tbody tr:hover td{background:var(--surface2)}
         <div class="faq-item" data-tags="부서경비 선급금 구분 처리"><button class="faq-q" onclick="tf(this)">부서경비 처리 건과 선급금은 어떻게 구분하나요? <span class="faq-chevron">▼</span></button>
           <div class="faq-a">부서경비로 처리하는 경우 해당 비용을 지급수수료 등 비용 계정으로 즉시 처리합니다. 선급금은 먼저 비용을 지급한 뒤, 해당 기획개발 건이 방영 또는 종영되는 시점에 원가 또는 비용으로 대체 처리하는 방식입니다. 처리 방식이 명확하지 않은 경우 <strong>사전에 사업관리/재무담당자</strong>와 확인해 주세요.</div></div>
 
-        <div style="font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--text3);text-transform:uppercase;margin:.9rem 0 .6rem">법인카드</div>
+        <div id="cat-card" style="font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--text3);text-transform:uppercase;margin:.9rem 0 .6rem;scroll-margin-top:16px">법인카드</div>
         <div class="faq-item" data-tags="법인카드 승인 취소 정산"><button class="faq-q" onclick="tf(this)">법인카드 정산 시 승인내역과 취소내역이 함께 있으면 어떻게 처리하나요? <span class="faq-chevron">▼</span></button>
           <div class="faq-a">법인카드는 승인내역별로 전표가 각각 생성됩니다. 승인금액과 취소금액이 함께 있는 경우에는 <strong>마이너스 금액, 즉 취소내역부터 먼저 정산</strong>해 주세요.</div></div>
 
-        <div style="font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--text3);text-transform:uppercase;margin:.9rem 0 .6rem">IT자산</div>
+        <div id="cat-it" style="font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--text3);text-transform:uppercase;margin:.9rem 0 .6rem;scroll-margin-top:16px">IT자산</div>
         <div class="faq-item" data-tags="IT자산 계정 100만원 자산 비용"><button class="faq-q" onclick="tf(this)">IT 자산은 어느 계정으로 처리해야 하나요? <span class="faq-chevron">▼</span></button>
           <div class="faq-a">업무용 IT 자산은 금액 기준에 따라 처리 방식이 달라집니다. <strong>100만원 이상은 자산으로 처리하고, 100만원 미만은 비용</strong>으로 처리(품의 必)해 주세요.</div></div>
         <div class="faq-item" data-tags="IT자산 법인카드 결재선 구매"><button class="faq-q" onclick="tf(this)">법인카드로 IT 자산을 결제한 경우 결재선은 어떻게 설정하나요? <span class="faq-chevron">▼</span></button>
           <div class="faq-a">총무를 통한 구매 건은 총무 관련 합의가 필요할 수 있습니다. 법인카드로 직접 결제한 뒤 정산하는 건은 일반적으로 사업관리팀장 합의로 진행 가능합니다. 결재선은 기안: 현업 사용자, 조정: 부서장, 합의: 사업관리팀장, 결재: 현업 조직장을 기준으로 부탁드립니다.</div></div>
 
-        <div style="font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--text3);text-transform:uppercase;margin:.9rem 0 .6rem">제작비/경비</div>
+        <div id="cat-produce" style="font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--text3);text-transform:uppercase;margin:.9rem 0 .6rem;scroll-margin-top:16px">제작비/경비</div>
         <div class="faq-item" data-tags="제작비 경비 부서경비 처리"><button class="faq-q" onclick="tf(this)">제작비 일부를 경비 처리해도 되나요? <span class="faq-chevron">▼</span></button>
           <div class="faq-a"><strong>제작비는 원가 귀속되어야 하므로 부서경비로 처리할 수 없습니다.</strong> 다만 경비 성격의 비용인 경우에는 사전 품의를 통해 사업기획담당과 협의 후 처리해 주세요.</div></div>
 
-        <div style="font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--text3);text-transform:uppercase;margin:.9rem 0 .6rem">회의비</div>
+        <div id="cat-meeting" style="font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--text3);text-transform:uppercase;margin:.9rem 0 .6rem;scroll-margin-top:16px">회의비</div>
         <div class="faq-item" data-tags="회의비 계정 이벤트 타운홀"><button class="faq-q" onclick="tf(this)">회의비는 어떤 경우에 사용하는 계정인가요? <span class="faq-chevron">▼</span></button>
           <div class="faq-a">회의비는 업무 목적의 회의에 소요되는 비용을 처리하는 계정입니다. 회의 개최에 통상적으로 필요한 비용을 처리할 수 있으며, 타운홀 미팅 등 이벤트성 행사도 회의비로 처리할 수 있습니다.</div></div>
 
-        <div style="font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--text3);text-transform:uppercase;margin:.9rem 0 .6rem">대리운전</div>
+        <div id="cat-drive" style="font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--text3);text-transform:uppercase;margin:.9rem 0 .6rem;scroll-margin-top:16px">대리운전</div>
         <div class="faq-item" data-tags="대리운전 계정 지급수수료 조직장"><button class="faq-q" onclick="tf(this)">대리운전 비용은 어느 계정으로 처리하나요? <span class="faq-chevron">▼</span></button>
           <div class="faq-a">대리운전 비용은 <strong>지급수수료-외주용역수수료 계정</strong>으로 처리합니다. 단, 조직장에 한해 처리 가능합니다.</div></div>
 
-        <div style="font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--text3);text-transform:uppercase;margin:.9rem 0 .6rem">멤버십</div>
+        <div id="cat-member" style="font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--text3);text-transform:uppercase;margin:.9rem 0 .6rem;scroll-margin-top:16px">멤버십</div>
         <div class="faq-item" data-tags="멤버십 업그레이드 부서예산 연간"><button class="faq-q" onclick="tf(this)">멤버십 업그레이드 비용도 부서예산으로 처리할 수 있나요? <span class="faq-chevron">▼</span></button>
           <div class="faq-a">기존 연간 멤버십을 업그레이드하면서 추가 결제되는 비용은, 해당 비용이 <strong>예산 계획 범위 내에 있다면 부서예산으로 처리</strong>할 수 있습니다.</div></div>
 
-        <div style="font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--text3);text-transform:uppercase;margin:.9rem 0 .6rem">AI 툴비</div>
+        <div id="cat-ai" style="font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--text3);text-transform:uppercase;margin:.9rem 0 .6rem;scroll-margin-top:16px">AI 툴비</div>
         <div class="faq-item" data-tags="AI 툴 계정 지급수수료 기타"><button class="faq-q" onclick="tf(this)">AI 툴 이용료는 어떤 계정으로 정산하나요? <span class="faq-chevron">▼</span></button>
           <div class="faq-a">AI 툴 이용료는 <strong>지급수수료-기타 계정</strong>으로 정산합니다.</div></div>
         <div class="faq-item" data-tags="AI 툴 연간 결제 월별 안분"><button class="faq-q" onclick="tf(this)">AI 툴이 연간 결제되는 경우에는 어떻게 처리하나요? <span class="faq-chevron">▼</span></button>
           <div class="faq-a">AI 툴 이용료가 연간 단위로 결제되는 경우 전체 금액을 한 번에 비용 처리하지 않고, <strong>월별 안분 인식 기준</strong>으로 정산합니다. 지급수수료-기타 계정으로 처리 부탁드립니다.</div></div>
 
-        <div style="font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--text3);text-transform:uppercase;margin:.9rem 0 .6rem">출장일비</div>
+        <div id="cat-travel" style="font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--text3);text-transform:uppercase;margin:.9rem 0 .6rem;scroll-margin-top:16px">출장일비</div>
         <div class="faq-item" data-tags="출장일비 예산 부족 추가 신청"><button class="faq-q" onclick="tf(this)">출장일비를 부서경비로 처리해야 하는데 예산이 부족하면 어떻게 하나요? <span class="faq-chevron">▼</span></button>
           <div class="faq-a">부서예산이 부족한 경우 <strong>기안 완료된 출장보고서를 기준으로 예산조정신청(추가)을 진행</strong>해 주세요. 예산 추가 반영 후 출장일비 정산을 진행하면 됩니다.</div></div>
         <div class="faq-item" data-tags="출장일비 환율 신청금액 실제정산"><button class="faq-q" onclick="tf(this)">출장일비 신청 금액과 실제 정산 금액이 달라도 되나요? <span class="faq-chevron">▼</span></button>
@@ -529,24 +557,25 @@ table.main-tbl tbody tr:hover td{background:var(--surface2)}
         <div class="faq-item" data-tags="출장일비 타조직 본부 비용 귀속"><button class="faq-q" onclick="tf(this)">타 조직 인력이 본부 프로그램 제작을 위해 투입된 경우 출장일비는 어디서 처리하나요? <span class="faq-chevron">▼</span></button>
           <div class="faq-a">타 조직 인력이 본부 프로그램 제작을 위해 투입된 경우에도 해당 출장일비는 <strong>원칙적으로 소속 본부 비용</strong>으로 처리합니다. 비용 귀속이 불명확한 경우에는 관련 부서와 확인 후 진행해 주세요.</div></div>
       </div>
+        </div><!-- faq-main -->
+      </div><!-- faq-layout -->
 
-      <div class="contact-card" style="margin-top:2rem">
+      <div class="contact-card" style="margin-top:1.5rem">
         <div class="contact-avatar">김</div>
-        <div class="contact-info">
-          <strong>추가 문의 — IP)사업기획1팀 김예원님</strong>
-          <span>FAQ에 없는 내용은 직접 문의해 주세요.</span>
-        </div>
+        <div class="contact-info"><strong>추가 문의 — IP)사업기획1팀 김예원님</strong><span>FAQ에 없는 내용은 직접 문의해 주세요.</span></div>
       </div>
-    </div>
+
+    </div><!-- faq page -->
 
     <!-- 코스트센터 -->
     <div id="cctr" class="page">
-      <h1>코스트센터(팀)</h1>
-      <p class="page-sub">조직별 CCTR 코드 안내 — 사업부와 팀을 혼동하지 않도록 확인 부탁드립니다.</p>
-      <input type="text" class="srch-input" id="srchInput" placeholder="조직명 또는 CCTR 코드 검색..." oninput="filterCCTR()"/>
+      <button class="home-btn" onclick="go('home',document.querySelector('.nav-item'))">← 홈으로</button>
+      <h1>코스트센터(팀 고유 코드)</h1>
+      <p class="page-sub">사업부와 팀을 혼동하지 않도록 확인 부탁드립니다.</p>
+      <input type="text" class="srch-input" id="srchInput" placeholder="조직명 또는 코스트센터 코드 검색..." oninput="filterCCTR()"/>
       <div class="tbl-wrap">
         <table class="main-tbl">
-          <thead><tr><th>조직명</th><th>CCTR</th><th>CCTR명</th></tr></thead>
+          <thead><tr><th>조직명</th><th>코스트센터</th><th>코스트센터명</th></tr></thead>
           <tbody id="cctrBody"></tbody>
         </table>
       </div>
@@ -718,6 +747,12 @@ function bzSubmit(){
 bzRenderList();bzRenderDetail();
 
 // ===== FAQ 키워드 검색 =====
+function scrollCat(id){
+  document.querySelectorAll('.faq-cat-btn').forEach(b=>b.classList.remove('active'));
+  event.target.classList.add('active');
+  const el=document.getElementById(id);
+  if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+}
 function faqChip(kw){document.getElementById('faqSearchInput').value=kw;faqSearch();}
 function faqSearch(){
   const q=document.getElementById('faqSearchInput').value.trim().toLowerCase();
@@ -852,7 +887,7 @@ function filterAcct(){}
 
 // ===== AI 챗봇 =====
 function sq(q){document.getElementById('chatInput').value=q;sm();}
-const KB=`[IP사업본부(예능사업群) 부서예산 규정 — IP)사업기획1팀]
+const KB=`[IP사업본부(예능사업群) 부서예산 규정]
 - 예산 조정 신청은 2단계: 사전 품의 진행, BizOne 예산조정신청
 - 품의 결재선: 1차 상사(팀장/CP, 부재 시 생략) → IP사업기획담당 합의 → 2차 상사(담당/사업부장/EP)
 - BizOne 경로: BizOne > 비용계획 > 예산조정신청
