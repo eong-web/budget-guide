@@ -127,6 +127,8 @@ table.main-tbl tbody tr:hover td{background:var(--surface2)}
 .faq-cat-nav{width:140px;flex-shrink:0;position:sticky;top:1rem}
 .faq-cat-nav-inner{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:.75rem}
 .faq-cat-nav-title{font-size:10px;font-weight:700;letter-spacing:.06em;color:var(--text3);text-transform:uppercase;margin-bottom:.5rem;padding:0 4px}
+@keyframes faqHighlight{0%{background:#fffbe6;box-shadow:0 0 0 3px #ffe066;}60%{background:#fffbe6;box-shadow:0 0 0 3px #ffe066;}100%{background:transparent;box-shadow:none;}}
+.faq-item.highlight{animation:faqHighlight 1.5s ease forwards;border-radius:var(--radius)}
 .faq-cat-btn{display:block;width:100%;text-align:left;padding:5px 8px;border:none;background:none;font-size:12px;color:var(--text2);cursor:pointer;border-radius:var(--radius-sm);font-family:inherit;transition:all .15s}
 .faq-cat-btn:hover{background:var(--surface2);color:var(--text)}
 .faq-cat-btn.active{background:var(--accent-bg);color:var(--accent-text);font-weight:500}
@@ -270,7 +272,7 @@ table.main-tbl tbody tr:hover td{background:var(--surface2)}
               <div class="flow-row">
                 <div class="flow-col"><span class="flow-label">조정</span><div class="flow-node">1차 상사<small>팀장/CP (부재 시 생략)</small></div></div>
                 <span class="flow-arr">›</span>
-                <div class="flow-col"><span class="flow-label-empty">합의</span><div class="flow-node">IP사업기획1팀<small>합의</small></div></div>
+                <div class="flow-col"><span class="flow-label">합의</span><div class="flow-node">사업관리<small>IP사업기획1팀장 장세영님</small></div></div>
                 <span class="flow-arr">›</span>
                 <div class="flow-col"><span class="flow-label">결재</span><div class="flow-node">2차 상사<small>담당/사업부장/EP</small></div></div>
               </div>
@@ -357,7 +359,7 @@ table.main-tbl tbody tr:hover td{background:var(--surface2)}
           <div class="step"><div class="step-num">3</div><div class="step-body"><h4>결과 확인</h4><p>총 예산, 추가·전용·기간전용 값, 실적총액, 잔액 확인 가능</p></div></div>
         </div>
       </div>
-      <div class="alert alert-info" style="align-items:center;margin-bottom:1.5rem"><span class="alert-icon" style="line-height:1;margin-top:0">ℹ️</span><span>코스트센터 코드는 <strong>코스트센터 조회 탭</strong>에서 확인하세요. 예: 사업기획1팀 → A0335</span></div>
+      <div class="alert alert-info" style="align-items:center;margin-bottom:1.5rem"><span class="alert-icon" style="line-height:1;margin-top:0">ℹ️</span><span>코스트센터 코드는 <strong><a href="#" onclick="go('cctr',document.querySelectorAll('.nav-item')[5]);return false;" style="color:var(--accent);text-decoration:underline;cursor:pointer">코스트센터 조회 탭</a></strong>에서 확인하세요. 예: 사업기획1팀 → A0335</span></div>
 
       <hr style="border:none;border-top:1px solid var(--border);margin-bottom:1.5rem"/>
       <div class="step-section-label" style="margin-bottom:1rem">BizOne 화면 체험</div>
@@ -544,6 +546,8 @@ table.main-tbl tbody tr:hover td{background:var(--surface2)}
           <div class="faq-a">기존 연간 멤버십을 업그레이드하면서 추가 결제되는 비용은, 해당 비용이 <strong>예산 계획 범위 내에 있다면 부서예산으로 처리</strong>할 수 있습니다.</div></div>
 
         <div id="cat-ai" style="font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--text3);text-transform:uppercase;margin:.9rem 0 .6rem;scroll-margin-top:16px">AI 툴비</div>
+        <div class="faq-item" data-tags="AI 툴비 ChatGPT Claude Perplexity 계정 지급수수료 기타"><button class="faq-q" onclick="tf(this)">AI 툴비(ChatGPT, Claude, Perplexity 등)는 어느 계정으로 정산하면 되나요? <span class="faq-chevron">▼</span></button>
+          <div class="faq-a">재무 가이드에 따라, <strong>지급수수료-기타</strong> 계정으로 부탁드립니다.</div></div>
         <div class="faq-item" data-tags="AI 툴 계정 지급수수료 기타"><button class="faq-q" onclick="tf(this)">AI 툴 이용료는 어떤 계정으로 정산하나요? <span class="faq-chevron">▼</span></button>
           <div class="faq-a">AI 툴 이용료는 <strong>지급수수료-기타 계정</strong>으로 정산합니다.</div></div>
         <div class="faq-item" data-tags="AI 툴 연간 결제 월별 안분"><button class="faq-q" onclick="tf(this)">AI 툴이 연간 결제되는 경우에는 어떻게 처리하나요? <span class="faq-chevron">▼</span></button>
@@ -612,7 +616,7 @@ const D=[
   {g:'사업기획담당'},
   {o:'사업기획담당',c:'A0710',n:'IP)사업기획담당',i:1,m:'정선화'},
   {o:'사업기획1팀',c:'A0335',n:'IP)사업기획1팀',i:2,m:'장세영'},
-  {o:'IP전략팀',c:'A0735',n:'IP)IP전략팀',i:2,m:'김소령'},
+  {o:'IP전략팀',c:'A0735',n:'IP)IP전략팀',i:2,m:'김소형'},
   {o:'교육과정',c:'A0018',n:'IP)교육과정',i:2,m:''},
   {g:'콘텐츠마케팅담당'},
   {o:'콘텐츠마케팅담당',c:'A0173',n:'IP)콘텐츠마케팅담당',i:1,m:'강지훈'},
@@ -755,7 +759,27 @@ function scrollCat(id){
   document.querySelectorAll('.faq-cat-btn').forEach(b=>b.classList.remove('active'));
   event.target.classList.add('active');
   const el=document.getElementById(id);
-  if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+  if(!el) return;
+  el.scrollIntoView({behavior:'smooth',block:'start'});
+
+  // 해당 카테고리의 faq-item들 하이라이트
+  document.querySelectorAll('.faq-item.highlight').forEach(i=>i.classList.remove('highlight'));
+  // 다음 카테고리 헤더 전까지의 faq-item 찾기
+  let node = el.nextElementSibling;
+  const items = [];
+  while(node && !node.id?.startsWith('cat-')){
+    if(node.classList && node.classList.contains('faq-item')) items.push(node);
+    node = node.nextElementSibling;
+  }
+  setTimeout(()=>{
+    items.forEach((item, i)=>{
+      setTimeout(()=>{
+        item.classList.remove('highlight');
+        void item.offsetWidth; // reflow
+        item.classList.add('highlight');
+      }, i * 80);
+    });
+  }, 400);
 }
 function faqChip(kw){document.getElementById('faqSearchInput').value=kw;faqSearch();}
 function faqSearch(){
