@@ -242,6 +242,7 @@ table.main-tbl tbody tr:hover td{background:var(--surface2)}
       <h1>IP사업본부(예능사업群) 부서예산 Guide</h1>
       <p class="page-note">※ Non-Scripted BU, 디지털신사업담당, 콘텐츠마케팅담당 등</p>
       <p class="page-sub">예산 조정 신청 · 조회 등 주요 절차 및 유의사항 정리</p>
+      <div style="font-size:11px;color:var(--text3);margin-bottom:1.5rem">📅 Last updated: 2026.06 기준</div>
       <div class="home-grid">
         <div class="home-card" onclick="go('apply',document.querySelectorAll('.nav-item')[1])"><div class="home-card-icon">📋</div><h3>예산 조정 신청</h3><p>품의 → BizOne</p></div>
         <div class="home-card" onclick="go('check',document.querySelectorAll('.nav-item')[2])"><div class="home-card-icon">📊</div><h3>예산 현황 조회</h3><p>잔액 및 조정 내역 확인</p></div>
@@ -484,8 +485,8 @@ table.main-tbl tbody tr:hover td{background:var(--surface2)}
         <div class="faq-cat-nav">
           <div class="faq-cat-nav-inner">
             <div class="faq-cat-nav-title">카테고리</div>
-            <button class="faq-cat-btn active" onclick="scrollCat('cat-budget')">예산/권한</button>
-            <button class="faq-cat-btn" onclick="scrollCat('cat-transfer')">예산/전용</button>
+            <button class="faq-cat-btn active" onclick="scrollCat('cat-budget')">예산</button>
+            <button class="faq-cat-btn" onclick="scrollCat('cat-transfer')">전용</button>
             <button class="faq-cat-btn" onclick="scrollCat('cat-settle')">정산/품의</button>
             <button class="faq-cat-btn" onclick="scrollCat('cat-card')">법인카드</button>
             <button class="faq-cat-btn" onclick="scrollCat('cat-it')">IT자산</button>
@@ -494,11 +495,15 @@ table.main-tbl tbody tr:hover td{background:var(--surface2)}
             <button class="faq-cat-btn" onclick="scrollCat('cat-drive')">대리운전</button>
             <button class="faq-cat-btn" onclick="scrollCat('cat-member')">멤버십</button>
             <button class="faq-cat-btn" onclick="scrollCat('cat-ai')">AI 툴비</button>
+            <button class="faq-cat-btn" onclick="scrollCat('cat-oil')">유류비</button>
+            <button class="faq-cat-btn" onclick="scrollCat('cat-night')">야간교통비</button>
             <button class="faq-cat-btn" onclick="scrollCat('cat-travel')">출장일비</button>
           </div>
         </div>
         <div class="faq-main" id="faqList">
-        <div id="cat-budget" style="font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--text3);text-transform:uppercase;margin-bottom:.6rem;scroll-margin-top:16px">예산/권한</div>
+        <div id="cat-budget" style="font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--text3);text-transform:uppercase;margin-bottom:.6rem;scroll-margin-top:16px">예산</div>
+        <div class="faq-item" data-tags="분기통제 분기 통제 예산"><button class="faq-q" onclick="tf(this)">분기 통제가 무엇인가요? <span class="faq-chevron">▼</span></button>
+          <div class="faq-a">예산 및 내부 통제를 분기마다 진행한다는 뜻입니다.</div></div>
         <div class="faq-item" data-tags="예산 부서예산 조회 확인 BizOne"><button class="faq-q" onclick="tf(this)">부서 예산은 어디서 확인하나요? <span class="faq-chevron">▼</span></button>
           <div class="faq-a"><strong>BizOne > 비용계획 > 부서예산 > 기간별 예산대비실적조회</strong>에서 확인하실 수 있습니다.</div></div>
         <div class="faq-item" data-tags="예산 조회 정산 절차 권한 시스템"><button class="faq-q" onclick="tf(this)">부서예산 조회나 정산 전에 필요한 절차가 있나요? <span class="faq-chevron">▼</span></button>
@@ -506,11 +511,12 @@ table.main-tbl tbody tr:hover td{background:var(--surface2)}
         <div class="faq-item" data-tags="인원경비 부서경비 차이 경비"><button class="faq-q" onclick="tf(this)">인원경비와 부서경비는 어떻게 다른가요? <span class="faq-chevron">▼</span></button>
           <div class="faq-a">인원경비는 인원별로 부여되는 기초 예산으로, 회의비·소모품비·시내교통비·교육훈련비 등이 포함됩니다. 부서경비는 인원경비 외에 부서 운영상 추가로 필요한 비용을 처리하기 위한 예산입니다.</div></div>
 
-        <div id="cat-transfer" style="font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--text3);text-transform:uppercase;margin:.9rem 0 .6rem;scroll-margin-top:16px">예산/전용</div>
+        <div id="cat-transfer" style="font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--text3);text-transform:uppercase;margin:.9rem 0 .6rem;scroll-margin-top:16px">전용</div>
         <div class="faq-item" data-tags="이월 전용 자동 분기"><button class="faq-q" onclick="tf(this)">예산 이월은 자동으로 되나요? <span class="faq-chevron">▼</span></button>
           <div class="faq-a"><strong>예산은 자동 이월되지 않습니다.</strong> 이월 또는 전용이 필요한 경우 별도 품의 결재 후 예산조정신청을 진행해야 하며, 담당 부서 승인 후 반영됩니다. 분기가 경과해도 다음 분기로 자동 전용되지 않으므로 반드시 <strong>별도 신청</strong>이 필요합니다.</div></div>
         <div class="faq-item" data-tags="기간전용 전용 차이"><button class="faq-q" onclick="tf(this)">기간 전용과 전용의 차이가 뭔가요? <span class="faq-chevron">▼</span></button>
           <div class="faq-a">기간 전용은 계정은 동일하고 사용 기간만 변경할 때 사용합니다. 전용은 계정과 관계없이 예산을 다른 계정으로 이동할 때 사용합니다.</div></div>
+        <div id="cat-oil" style="font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--text3);text-transform:uppercase;margin:.9rem 0 .6rem;scroll-margin-top:16px">유류비</div>
         <div class="faq-item" data-tags="유류대 시내교통비 전용 조직장"><button class="faq-q" onclick="tf(this)">유류비는 시내교통비에서 바로 정산할 수 있나요? <span class="faq-chevron">▼</span></button>
           <div class="faq-a">일반 직원의 유류비는 시내교통비에서 바로 정산할 수 없습니다. 유류비 정산이 필요한 경우 먼저 <strong>시내교통비에서 유류비 계정으로 전용 품의를 기안하고, 예산조정신청에서 전용 신청을 진행한 뒤 정산</strong>해 주세요.</div></div>
         <div class="faq-item" data-tags="유류대 조직장 비조직장 전용"><button class="faq-q" onclick="tf(this)">조직장이 아니어도 유류대 처리가 가능한가요? <span class="faq-chevron">▼</span></button>
@@ -539,6 +545,8 @@ table.main-tbl tbody tr:hover td{background:var(--surface2)}
           <div class="faq-a">총무를 통한 구매 건은 총무 관련 합의가 필요할 수 있습니다. 법인카드로 직접 결제한 뒤 정산하는 건은 일반적으로 사업관리팀장 합의로 진행 가능합니다. 결재선은 기안: 현업 사용자, 조정: 부서장, 합의: 사업관리팀장, 결재: 현업 조직장을 기준으로 부탁드립니다.</div></div>
 
         <div id="cat-produce" style="font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--text3);text-transform:uppercase;margin:.9rem 0 .6rem;scroll-margin-top:16px">제작비/경비</div>
+        <div class="faq-item" data-tags="쏘카 배차 시내교통비 제작비 교통"><button class="faq-q" onclick="tf(this)">쏘카/배차 등을 사용하고, 시내교통비로 처리해도 되나요? <span class="faq-chevron">▼</span></button>
+          <div class="faq-a">프로그램 기획/제작을 위해 사용한 경우, <strong>제작비 처리</strong> 가능합니다.<br>그 외 건들은 재무 및 사업관리 내부 확인이 필요합니다.</div></div>
         <div class="faq-item" data-tags="제작비 경비 부서경비 처리"><button class="faq-q" onclick="tf(this)">제작비 일부를 경비 처리해도 되나요? <span class="faq-chevron">▼</span></button>
           <div class="faq-a"><strong>제작비는 원가로 귀속되어야 하므로 부서경비로 처리할 수 없습니다.</strong> 다만 경비 성격의 비용인 경우에는 사전 품의를 통해 사업기획담당과 협의 후 처리해 주세요.</div></div>
 
@@ -556,9 +564,15 @@ table.main-tbl tbody tr:hover td{background:var(--surface2)}
 
         <div id="cat-ai" style="font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--text3);text-transform:uppercase;margin:.9rem 0 .6rem;scroll-margin-top:16px">AI 툴비</div>
         <div class="faq-item" data-tags="AI 툴비 ChatGPT Claude Perplexity 계정 지급수수료 기타"><button class="faq-q" onclick="tf(this)">AI 툴비(ChatGPT, Claude, Perplexity 등)는 어느 계정으로 정산하면 되나요? <span class="faq-chevron">▼</span></button>
-          <div class="faq-a">재무 가이드에 따라, <strong>지급수수료-기타</strong> 계정으로 부탁드립니다.</div></div>
+          <div class="faq-a">특정 프로그램 기획/제작을 위해 사용된 AI 툴비의 경우, <strong>제작비 처리</strong> 부탁드립니다. (상세 내용 제작관리팀 문의)<br>그 외 부서경비 처리해야 하는 경우, 재무 가이드에 따라 <strong>지급수수료-기타</strong> 계정으로 처리해 주십시오.</div></div>
         <div class="faq-item" data-tags="AI 툴 연간 결제 월별 안분"><button class="faq-q" onclick="tf(this)">AI 툴이 연간 결제되는 경우에는 어떻게 처리하나요? <span class="faq-chevron">▼</span></button>
-          <div class="faq-a">AI 툴 이용료가 연간 단위로 결제되는 경우 전체 금액을 한 번에 비용 처리하지 않고, <strong>월별 안분 인식 기준</strong>으로 정산합니다. 지급수수료-기타 계정으로 처리 부탁드립니다.</div></div>
+          <div class="faq-a">AI 툴 이용료가 연간 단위로 결제되는 경우 전체 금액을 한 번에 비용 처리하지 않고, <strong>월별 안분 인식 기준</strong>으로 정산합니다.</div></div>
+
+        <div id="cat-night" style="font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--text3);text-transform:uppercase;margin:.9rem 0 .6rem;scroll-margin-top:16px">야간교통비</div>
+        <div class="faq-item" data-tags="야간교통비 잔액 복지"><button class="faq-q" onclick="tf(this)">야간교통비 잔액은 어디서 보나요? <span class="faq-chevron">▼</span></button>
+          <div class="faq-a">야간교통비의 경우, 회사 복지 차원에서 진행하는 건이므로 따로 잔액을 설정해두고 있지 않습니다.</div></div>
+        <div class="faq-item" data-tags="야간교통비 잔액 없음 시내교통비 예산"><button class="faq-q" onclick="tf(this)">야간교통비 처리를 하려고 하는데, 잔액이 없다고 떠요! <span class="faq-chevron">▼</span></button>
+          <div class="faq-a">야간교통비 상신 시, <strong>시내교통비 처리</strong>되는 건이 있는지 확인 부탁드립니다. 시내교통비의 경우 분기별로 잔액 관리를 하고 있으며, 잔액이 부족한 경우 <strong>예산 추가/전용</strong>이 필요합니다.</div></div>
 
         <div id="cat-travel" style="font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--text3);text-transform:uppercase;margin:.9rem 0 .6rem;scroll-margin-top:16px">출장일비</div>
         <div class="faq-item" data-tags="출장일비 예산 부족 추가 신청"><button class="faq-q" onclick="tf(this)">출장일비를 부서경비로 처리해야 하는데 예산이 부족하면 어떻게 하나요? <span class="faq-chevron">▼</span></button>
